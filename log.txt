@@ -1,0 +1,30 @@
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 77.0
+Data: Sat May 25 00:00:00 BRT 2024
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 150.0
+Data: Fri May 24 00:00:00 BRT 2024
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 1777.0
+Data: Tue May 28 00:00:00 BRT 2024
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 1777.0
+Data: Tue May 28 00:00:00 BRT 2024
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 50.0
+Data: Tue May 28 00:00:00 BRT 2024
+---------------
+Nova doação registrada:
+Tipo: alimentos
+Quantidade: 50.0
+Data: Tue May 28 00:00:00 BRT 2024
+---------------

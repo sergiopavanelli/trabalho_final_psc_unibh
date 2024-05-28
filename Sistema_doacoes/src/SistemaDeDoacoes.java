@@ -5,8 +5,10 @@ import java.util.Date;
 import java.util.List;
 
 
+
 class SistemaDeDoacoes {
     private List<Doacao> doacoes;
+    private static final String LOG_FILE = "log.txt";
 
     // Construtor
     public SistemaDeDoacoes() {
@@ -16,6 +18,7 @@ class SistemaDeDoacoes {
     // Método para adicionar uma nova doação
     public void adicionarDoacao(Doacao doacao) {
         doacoes.add(doacao);
+        logDoacao(doacao);
     }
 
     // Método para calcular o total das doações
@@ -60,4 +63,50 @@ class SistemaDeDoacoes {
             System.out.println(doacao);
         }
     }
+
+    // Método para registrar doações no log
+    private void logDoacao(Doacao doacao) {
+        try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
+            logWriter.println("Nova doação registrada:");
+            logWriter.println("Tipo: " + doacao.getTipo());
+            logWriter.println("Quantidade: " + doacao.getQuantidade());
+            logWriter.println("Data: " + doacao.getData());
+            logWriter.println("---------------");
+        } catch (IOException e) {
+            System.err.println("Erro ao gravar no arquivo de log: " + e.getMessage());
+        }
+    }
+
+    // Adicione este método na classe SistemaDeDoacoes
+public void calcularTotaisPorTipo() {
+    double totalDinheiro = 0;
+    double totalAlimentos = 0;
+    double totalRoupas = 0;
+    double totalOutras = 0;
+
+    for (Doacao doacao : doacoes) {
+        switch (doacao.getTipo()) {
+            case "dinheiro":
+                totalDinheiro += doacao.getQuantidade();
+                break;
+            case "alimentos":
+                totalAlimentos += doacao.getQuantidade();
+                break;
+            case "roupas":
+                totalRoupas += doacao.getQuantidade();
+                break;
+            case "outras":
+                totalOutras += doacao.getQuantidade();
+                break;
+        }
+    }
+
+    System.out.println("Totais acumulados por tipo de doação:");
+    System.out.println("Dinheiro: " + totalDinheiro);
+    System.out.println("Alimentos: " + totalAlimentos);
+    System.out.println("Roupas: " + totalRoupas);
+    System.out.println("Outras: " + totalOutras);
+}
+
+    
 }
