@@ -6,9 +6,13 @@ import java.util.List;
 
 
 
-class SistemaDeDoacoes {
+public class SistemaDeDoacoes {
     private List<Doacao> doacoes;
     private static final String LOG_FILE = "log.txt";
+    private double totalDinheiro;
+    private double totalAlimentos;
+    private double totalRoupas;
+    private double totalOutras;
 
     // Construtor
     public SistemaDeDoacoes() {
@@ -19,6 +23,7 @@ class SistemaDeDoacoes {
     public void adicionarDoacao(Doacao doacao) {
         doacoes.add(doacao);
         logDoacao(doacao);
+        calcularTotaisPorTipo();
     }
 
     // Método para calcular o total das doações
@@ -77,7 +82,8 @@ class SistemaDeDoacoes {
         }
     }
 
-    // Adicione este método na classe SistemaDeDoacoes
+    
+
 public void calcularTotaisPorTipo() {
     double totalDinheiro = 0;
     double totalAlimentos = 0;

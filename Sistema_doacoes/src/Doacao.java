@@ -4,9 +4,11 @@ public class Doacao {
     private String tipo;
     private double quantidade;
     private Date data;
+    
 
     // Construtor
     public Doacao(String tipo, double quantidade, Date data) {
+        
         this.tipo = tipo;
         this.quantidade = quantidade;
         this.data = data;
@@ -36,6 +38,8 @@ public class Doacao {
     public void setData(Date data) {
         this.data = data;
     }
+
+  
 
     @Override
     public String toString() {

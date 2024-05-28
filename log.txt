@@ -28,3 +28,28 @@ Tipo: alimentos
 Quantidade: 50.0
 Data: Tue May 28 00:00:00 BRT 2024
 ---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 100.0
+Data: Tue May 28 00:00:00 BRT 2024
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 150.0
+Data: Sat May 20 00:00:00 BRT 2023
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 777.0
+Data: Sun Mar 20 00:00:00 BRT 1983
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 100.0
+Data: Sun Mar 20 00:00:00 BRT 1983
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 777.0
+Data: Sun Mar 20 00:00:00 BRT 1983
+---------------

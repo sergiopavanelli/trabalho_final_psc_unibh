@@ -59,8 +59,8 @@ public class EntradaDeDoacoes {
             System.out.print("Digite o número correspondente ao tipo de doação: ");
             String tipo = "";
             int opcao = scanner.nextInt();
-            scanner.nextLine();  // Consome a nova linha
-    
+            scanner.nextLine(); 
+
             switch (opcao) {
                 case 1:
                     tipo = "dinheiro";
@@ -88,11 +88,11 @@ public class EntradaDeDoacoes {
             String tipo = obterTipoDoacao();
             System.out.print("Digite a quantidade de doação: ");
             double quantidade = scanner.nextDouble();
-            scanner.nextLine();  // Consome a nova linha
+            scanner.nextLine(); 
             System.out.print("Digite a data da doação (dd/MM/yyyy): ");
             String dataStr = scanner.nextLine();
             Date data = new SimpleDateFormat("dd/MM/yyyy").parse(dataStr);
-            Doacao doacao = new Doacao(tipo, quantidade, data); // Supondo que Doacao tenha um construtor correspondente
+            Doacao doacao = new Doacao(tipo, quantidade, data); 
             sistema.adicionarDoacao(doacao);
             sistema.calcularTotaisPorTipo();
             System.out.println("Doação adicionada com sucesso!");
