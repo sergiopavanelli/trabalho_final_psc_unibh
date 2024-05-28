@@ -53,3 +53,28 @@ Tipo: dinheiro
 Quantidade: 777.0
 Data: Sun Mar 20 00:00:00 BRT 1983
 ---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 177.0
+Data: Wed Mar 20 00:00:00 BRT 1985
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 177.0
+Data: Wed Mar 20 00:00:00 BRT 2024
+---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 188.0
+Data: Tue Mar 20 00:00:00 BRT 1984
+---------------
+Nova doação registrada:
+Tipo: roupas
+Quantidade: 54.0
+Data: Wed Mar 20 00:00:00 BRT 2024
+---------------
+Nova doação registrada:
+Tipo: alimentos
+Quantidade: 65.0
+Data: Thu May 20 00:00:00 BRT 2021
+---------------

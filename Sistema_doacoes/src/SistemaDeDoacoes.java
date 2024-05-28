@@ -9,10 +9,7 @@ import java.util.List;
 public class SistemaDeDoacoes {
     private List<Doacao> doacoes;
     private static final String LOG_FILE = "log.txt";
-    private double totalDinheiro;
-    private double totalAlimentos;
-    private double totalRoupas;
-    private double totalOutras;
+
 
     // Construtor
     public SistemaDeDoacoes() {
