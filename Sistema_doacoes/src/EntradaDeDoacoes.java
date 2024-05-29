@@ -90,10 +90,7 @@ public class EntradaDeDoacoes {
             System.out.print("Digite a quantidade de doação: ");
             double quantidade = scanner.nextDouble();
             scanner.nextLine(); 
-            System.out.print("Digite a data da doação (dd/MM/yyyy): ");
-            String dataStr = scanner.nextLine();
-            Date data = new SimpleDateFormat("dd/MM/yyyy").parse(dataStr);
-            Doacao doacao = new Doacao(tipo, quantidade, data); 
+            Doacao doacao = new Doacao(tipo, quantidade); 
             sistema.adicionarDoacao(doacao);
             sistema.calcularTotaisPorTipo();
             System.out.println("Doação adicionada com sucesso!");

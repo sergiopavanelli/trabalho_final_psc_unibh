@@ -50,7 +50,7 @@ public class SistemaDeDoacoes {
                 String tipo = dados[0].split("=")[1];
                 double quantidade = Double.parseDouble(dados[1].split("=")[1]);
                 Date data = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(dados[2].split("=")[1].replace("]", ""));
-                doacoes.add(new Doacao(tipo, quantidade, data));
+                doacoes.add(new Doacao(tipo, quantidade));
             }
         } catch (Exception e) {
             e.printStackTrace();
