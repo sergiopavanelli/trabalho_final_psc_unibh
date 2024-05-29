@@ -5,11 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 
-
 public class SistemaDeDoacoes {
     private List<Doacao> doacoes;
     private static final String LOG_FILE = "log.txt";
-
 
     // Construtor
     public SistemaDeDoacoes() {
