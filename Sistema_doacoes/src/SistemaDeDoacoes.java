@@ -64,18 +64,15 @@ public class SistemaDeDoacoes {
         }
     }
 
-    // Método para registrar doações no log
-    private void logDoacao(Doacao doacao) {
-        try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
-            logWriter.println("Nova doação registrada:");
-            logWriter.println("Tipo: " + doacao.getTipo());
-            logWriter.println("Quantidade: " + doacao.getQuantidade());
-            logWriter.println("Data: " + doacao.getData());
-            logWriter.println("---------------");
-        } catch (IOException e) {
-            System.err.println("Erro ao gravar no arquivo de log: " + e.getMessage());
+
+        // Método para registrar doações no log
+        private void logDoacao(Doacao doacao) {
+            try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
+                logWriter.println(doacao.toString());
+            } catch (IOException e) {
+                System.err.println("Erro ao gravar no arquivo de log: " + e.getMessage());
+            }
         }
-    }
 
     
 

@@ -113,3 +113,5 @@ Tipo: outras
 Quantidade: 6.0
 Data: Fri Mar 20 00:00:00 BRT 2015
 ---------------
+Doacao [tipo=dinheiro, quantidade=200.0, data=Thu Mar 20 00:00:00 BRT 2014]
+Doacao [tipo=alimentos, quantidade=300.0, data=Fri Feb 20 00:00:00 BRT 2015]

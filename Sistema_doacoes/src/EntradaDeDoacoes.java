@@ -27,7 +27,7 @@ public class EntradaDeDoacoes {
                     adicionarDoacao();
                     break;
                 case 2:
-                    sistema.calcularTotalDoacoes();
+                    calcularTotalDoacoes();
                     sistema.calcularTotaisPorTipo();
                     break;
                 case 3:
@@ -37,7 +37,7 @@ public class EntradaDeDoacoes {
                     carregarDoacoes();
                     break;
                 case 5:
-                    exibirDoacoes();
+                    sistema.exibirDoacoes();
                     break;
                 case 6:
                     System.out.println("Saindo...");
@@ -135,9 +135,7 @@ public class EntradaDeDoacoes {
         }
     }
 
-    private static void exibirDoacoes() {
-        sistema.exibirDoacoes();
-    }
+
 
     
 }   
