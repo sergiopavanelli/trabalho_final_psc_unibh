@@ -93,3 +93,23 @@ Tipo: dinheiro
 Quantidade: 777.0
 Data: Tue Mar 20 00:00:00 BRT 2012
 ---------------
+Nova doação registrada:
+Tipo: dinheiro
+Quantidade: 777.0
+Data: Thu Mar 20 00:00:00 BRT 2025
+---------------
+Nova doação registrada:
+Tipo: alimentos
+Quantidade: 100.0
+Data: Thu Mar 20 00:00:00 BRT 2014
+---------------
+Nova doação registrada:
+Tipo: roupas
+Quantidade: 89.0
+Data: Sat Mar 04 00:00:00 BRT 2023
+---------------
+Nova doação registrada:
+Tipo: outras
+Quantidade: 6.0
+Data: Fri Mar 20 00:00:00 BRT 2015
+---------------

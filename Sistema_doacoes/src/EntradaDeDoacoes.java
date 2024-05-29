@@ -27,7 +27,8 @@ public class EntradaDeDoacoes {
                     adicionarDoacao();
                     break;
                 case 2:
-                    calcularTotalDoacoes();
+                    sistema.calcularTotalDoacoes();
+                    sistema.calcularTotaisPorTipo();
                     break;
                 case 3:
                     salvarDoacoes();
