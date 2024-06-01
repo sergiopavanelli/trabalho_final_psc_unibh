@@ -14,15 +14,17 @@ public class SistemaDeDoacoes {
 
     public SistemaDeDoacoes() {
         doacoes = new ArrayList<>();
+        carregarDoacoes();
         carregarTotaisArmazenados(); // Carrega os totais acumulados do arquivo ao iniciar
     }
 
     public void adicionarDoacao(Doacao doacao) {
         doacoes.add(doacao);
-        logDoacao(doacao);
-        calcularTotaisPorTipo();
         salvarDoacoes();
+        calcularTotaisPorTipo();
+        logDoacao(doacao);
     }
+    
 
     public double calcularTotalDoacoes() {
         double total = 0;
@@ -115,18 +117,10 @@ public class SistemaDeDoacoes {
         System.out.println("Outras: " + totalOutras);
     }
 
-    private void logDoacao(Doacao doacao) {
-        // Primeiro, adicionamos a nova doação à lista de doações
-        doacoes.add(doacao);
-    
-        // Em seguida, recalculamos os totais acumulados por tipo
-        calcularTotaisPorTipo();
-    
+        private void logDoacao(Doacao doacao) {
         try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
-            // Escrevemos a nova doação no arquivo de log
             logWriter.println(doacao.toString());
             logWriter.println("Totais acumulados no momento:");
-            // Escrevemos os totais acumulados atualizados no arquivo de log
             logWriter.println("Dinheiro: " + totalDinheiro);
             logWriter.println("Alimentos: " + totalAlimentos);
             logWriter.println("Roupas: " + totalRoupas);
@@ -136,6 +130,7 @@ public class SistemaDeDoacoes {
             System.err.println("Erro ao gravar no arquivo de log: " + e.getMessage());
         }
     }
+    
 
 }
     

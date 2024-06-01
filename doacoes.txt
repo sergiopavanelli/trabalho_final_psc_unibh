@@ -1,2 +1,13 @@
+alimentos,30.0
+alimentos,30.0
+roupas,40.0
+roupas,40.0
 dinheiro,77.0
+alimentos,33.0
+roupas,55.0
+outras,66.0
 dinheiro,77.0
+alimentos,33.0
+roupas,55.0
+dinheiro,77.0
+dinheiro,69.0

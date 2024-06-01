@@ -437,3 +437,69 @@ Dinheiro: 154.0
 Alimentos: 0.0
 Roupas: 0.0
 Outras: 0.0
+Doacao [tipo=alimentos, quantidade=30.0, data=Sat Jun 01 14:38:56 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 0.0
+Alimentos: 60.0
+Roupas: 0.0
+Outras: 0.0
+Doacao [tipo=roupas, quantidade=40.0, data=Sat Jun 01 14:39:00 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 0.0
+Alimentos: 60.0
+Roupas: 80.0
+Outras: 0.0
+Doacao [tipo=dinheiro, quantidade=77.0, data=Sat Jun 01 14:44:30 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 77.0
+Alimentos: 60.0
+Roupas: 80.0
+Outras: 0.0
+Doacao [tipo=alimentos, quantidade=33.0, data=Sat Jun 01 14:44:32 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 77.0
+Alimentos: 93.0
+Roupas: 80.0
+Outras: 0.0
+Doacao [tipo=roupas, quantidade=55.0, data=Sat Jun 01 14:44:35 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 77.0
+Alimentos: 93.0
+Roupas: 135.0
+Outras: 0.0
+Doacao [tipo=outras, quantidade=66.0, data=Sat Jun 01 14:44:37 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 77.0
+Alimentos: 93.0
+Roupas: 135.0
+Outras: 66.0
+Doacao [tipo=dinheiro, quantidade=77.0, data=Sat Jun 01 14:45:03 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 154.0
+Alimentos: 93.0
+Roupas: 135.0
+Outras: 66.0
+Doacao [tipo=alimentos, quantidade=33.0, data=Sat Jun 01 14:45:10 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 154.0
+Alimentos: 126.0
+Roupas: 135.0
+Outras: 66.0
+Doacao [tipo=roupas, quantidade=55.0, data=Sat Jun 01 14:45:19 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 154.0
+Alimentos: 126.0
+Roupas: 190.0
+Outras: 66.0
+Doacao [tipo=dinheiro, quantidade=77.0, data=Sat Jun 01 14:45:27 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 231.0
+Alimentos: 126.0
+Roupas: 190.0
+Outras: 66.0
+Doacao [tipo=dinheiro, quantidade=69.0, data=Sat Jun 01 14:45:44 BRT 2024]
+Totais acumulados no momento:
+Dinheiro: 300.0
+Alimentos: 126.0
+Roupas: 190.0
+Outras: 66.0
