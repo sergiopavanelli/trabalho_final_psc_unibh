@@ -1,6 +1,4 @@
 import java.util.Scanner;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.io.*;
 
 // Classe Doacao precisa ser definida antes de compilar e executar este código
@@ -28,7 +26,7 @@ public class EntradaDeDoacoes {
                     break;
                 case 2:
                     calcularTotalDoacoes();
-                    sistema.calcularTotaisPorTipo();
+                    sistema.exibirTotaisPorTipo();
                     break;
                 case 3:
                     salvarDoacoes();
@@ -60,7 +58,7 @@ public class EntradaDeDoacoes {
             System.out.print("Digite o número correspondente ao tipo de doação: ");
             String tipo = "";
             int opcao = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -84,31 +82,26 @@ public class EntradaDeDoacoes {
     }
 
     private static void adicionarDoacao() {
-
         try {
             String tipo = obterTipoDoacao();
             System.out.print("Digite a quantidade de doação: ");
             double quantidade = scanner.nextDouble();
-            scanner.nextLine(); 
-            Doacao doacao = new Doacao(tipo, quantidade); 
+            scanner.nextLine();
+            Doacao doacao = new Doacao(tipo, quantidade);
             sistema.adicionarDoacao(doacao);
-            sistema.calcularTotaisPorTipo();
             System.out.println("Doação adicionada com sucesso!");
         } catch (Exception e) {
             System.out.println("Erro ao adicionar doação!");
             e.printStackTrace();
         }
-
     }
 
     private static void calcularTotalDoacoes() {
-
         double total = sistema.calcularTotalDoacoes();
         System.out.println("Total de doações: " + total);
     }
 
     private static void salvarDoacoes() {
-
         try {
             System.out.print("Digite o caminho do arquivo para salvar as doações: ");
             String caminhoArquivo = scanner.nextLine();
@@ -131,10 +124,4 @@ public class EntradaDeDoacoes {
             e.printStackTrace();
         }
     }
-
-
-
-    
-}   
-
-
+}

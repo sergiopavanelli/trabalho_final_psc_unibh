@@ -4,17 +4,13 @@ public class Doacao {
     private String tipo;
     private double quantidade;
     private Date data;
-    
 
-    // Construtor
-    public Doacao(String tipo, double quantidade){
-        
+    public Doacao(String tipo, double quantidade) {
         this.tipo = tipo;
         this.quantidade = quantidade;
         this.data = new Date();
     }
 
-    // Getters e Setters
     public String getTipo() {
         return tipo;
     }
@@ -39,10 +35,8 @@ public class Doacao {
         this.data = data;
     }
 
-  
-
     @Override
     public String toString() {
-      return "Doacao [tipo=" + tipo + ", quantidade=" + quantidade + ", data=" + data + "]";
+        return "Doacao [tipo=" + tipo + ", quantidade=" + quantidade + ", data=" + data + "]";
     }
 }

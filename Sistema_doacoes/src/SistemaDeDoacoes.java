@@ -1,9 +1,8 @@
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class SistemaDeDoacoes {
     private List<Doacao> doacoes;
@@ -13,19 +12,16 @@ public class SistemaDeDoacoes {
     private double totalRoupas = 0;
     private double totalOutras = 0;
 
-    // Construtor
     public SistemaDeDoacoes() {
         doacoes = new ArrayList<>();
     }
 
-    // Método para adicionar uma nova doação
     public void adicionarDoacao(Doacao doacao) {
         doacoes.add(doacao);
         logDoacao(doacao);
         calcularTotaisPorTipo();
     }
 
-    // Método para calcular o total das doações
     public double calcularTotalDoacoes() {
         double total = 0;
         for (Doacao doacao : doacoes) {
@@ -34,7 +30,6 @@ public class SistemaDeDoacoes {
         return total;
     }
 
-    // Método para salvar doações em um arquivo
     public void salvarDoacoes(String caminhoArquivo) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(caminhoArquivo))) {
             for (Doacao doacao : doacoes) {
@@ -44,7 +39,6 @@ public class SistemaDeDoacoes {
         }
     }
 
-    // Método para carregar doações de um arquivo
     public void carregarDoacoes(String caminhoArquivo) throws IOException {
         doacoes.clear();
         try (BufferedReader reader = new BufferedReader(new FileReader(caminhoArquivo))) {
@@ -61,16 +55,19 @@ public class SistemaDeDoacoes {
         }
     }
 
-    // Método para exibir todas as doações
     public void exibirDoacoes() {
         for (Doacao doacao : doacoes) {
             System.out.println(doacao);
         }
     }
 
-     public void calcularTotaisPorTipo() {
-  
-            for (Doacao doacao : doacoes) {
+    public void calcularTotaisPorTipo() {
+        totalDinheiro = 0;
+        totalAlimentos = 0;
+        totalRoupas = 0;
+        totalOutras = 0;
+
+        for (Doacao doacao : doacoes) {
             switch (doacao.getTipo()) {
                 case "dinheiro":
                     totalDinheiro += doacao.getQuantidade();
@@ -86,7 +83,9 @@ public class SistemaDeDoacoes {
                     break;
             }
         }
-    
+    }
+
+    public void exibirTotaisPorTipo() {
         System.out.println("Totais acumulados por tipo de doação:");
         System.out.println("Dinheiro: " + totalDinheiro);
         System.out.println("Alimentos: " + totalAlimentos);
@@ -94,27 +93,18 @@ public class SistemaDeDoacoes {
         System.out.println("Outras: " + totalOutras);
     }
 
-
-        // Método para registrar doações no log
-        private void logDoacao(Doacao doacao) {
-            calcularTotaisPorTipo();
-            try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
-                logWriter.println(doacao.toString());
-                logWriter.println("Totais acumulados no momento:");
-                logWriter.println("Dinheiro: " + totalDinheiro);
-                logWriter.println("Alimentos: " + totalAlimentos);
-                logWriter.println("Roupas: " + totalRoupas);
-                logWriter.println("Outras: " + totalOutras);        
-                logWriter.flush();    
-
-            } catch (IOException e) {
-                System.err.println("Erro ao gravar no arquivo de log: " + e.getMessage());
-            } 
+    private void logDoacao(Doacao doacao) {
+        calcularTotaisPorTipo();
+        try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
+            logWriter.println(doacao.toString());
+            logWriter.println("Totais acumulados no momento:");
+            logWriter.println("Dinheiro: " + totalDinheiro);
+            logWriter.println("Alimentos: " + totalAlimentos);
+            logWriter.println("Roupas: " + totalRoupas);
+            logWriter.println("Outras: " + totalOutras);
+            logWriter.flush();
+        } catch (IOException e) {
+            System.err.println("Erro ao gravar no arquivo de log: " + e.getMessage());
         }
-
-    
-
-
-
-    
+    }
 }
