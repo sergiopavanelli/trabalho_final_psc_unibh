@@ -1,6 +1,7 @@
 import java.util.Date;
+import java.io.Serializable;
 
-public class Doacao {
+public class Doacao implements Serializable {
     private String tipo;
     private double quantidade;
     private Date data;

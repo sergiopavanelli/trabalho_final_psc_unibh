@@ -6,7 +6,9 @@ import java.text.SimpleDateFormat;
 
 public class SistemaDeDoacoes {
     private List<Doacao> doacoes;
+    private static final String DATA_FILE = "doacoes.txt";
     private static final String LOG_FILE = "log.txt";
+    
     private double totalDinheiro = 0;
     private double totalAlimentos = 0;
     private double totalRoupas = 0;
@@ -20,6 +22,7 @@ public class SistemaDeDoacoes {
         doacoes.add(doacao);
         logDoacao(doacao);
         calcularTotaisPorTipo();
+        salvarDoacoes();
     }
 
     public double calcularTotalDoacoes() {
@@ -30,30 +33,23 @@ public class SistemaDeDoacoes {
         return total;
     }
 
-    public void salvarDoacoes(String caminhoArquivo) throws IOException {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(caminhoArquivo))) {
-            for (Doacao doacao : doacoes) {
-                writer.write(doacao.toString());
-                writer.newLine();
-            }
-        }
-    }
-
-    public void carregarDoacoes(String caminhoArquivo) throws IOException {
-        doacoes.clear();
-        try (BufferedReader reader = new BufferedReader(new FileReader(caminhoArquivo))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                String[] dados = linha.split(",");
-                String tipo = dados[0].split("=")[1];
-                double quantidade = Double.parseDouble(dados[1].split("=")[1]);
-                Date data = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(dados[2].split("=")[1].replace("]", ""));
-                doacoes.add(new Doacao(tipo, quantidade));
-            }
-        } catch (Exception e) {
+    public void salvarDoacoes() {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
+            outputStream.writeObject(doacoes);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    public void carregarDoacoes() {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
+            doacoes = (List<Doacao>) inputStream.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            // Arquivo de dados não encontrado ou erro de leitura, então apenas inicializa uma nova lista de doações
+            doacoes = new ArrayList<>();
+        }
+    }
+
 
     public void exibirDoacoes() {
         for (Doacao doacao : doacoes) {

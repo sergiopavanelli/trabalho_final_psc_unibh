@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.io.*;
 
-// Classe Doacao precisa ser definida antes de compilar e executar este código
 
 public class EntradaDeDoacoes {
     private static SistemaDeDoacoes sistema = new SistemaDeDoacoes();
@@ -18,7 +17,7 @@ public class EntradaDeDoacoes {
             System.out.println("5. Exibir Doações");
             System.out.println("6. Sair");
             int opcao = scanner.nextInt();
-            scanner.nextLine();  // Consome a nova linha
+            scanner.nextLine(); 
 
             switch (opcao) {
                 case 1:
@@ -51,10 +50,10 @@ public class EntradaDeDoacoes {
     private static String obterTipoDoacao() {
         while (true) {
             System.out.println("Escolha o tipo de doação:");
-            System.out.println("1. Dinheiro");
-            System.out.println("2. Alimentos");
-            System.out.println("3. Roupas");
-            System.out.println("4. Outras");
+            System.out.println("1. Dinheiro (R$)");
+            System.out.println("2. Alimentos (kg)");
+            System.out.println("3. Roupas (un.)");
+            System.out.println("4. Outras (un.)");
             System.out.print("Digite o número correspondente ao tipo de doação: ");
             String tipo = "";
             int opcao = scanner.nextInt();
@@ -102,26 +101,17 @@ public class EntradaDeDoacoes {
     }
 
     private static void salvarDoacoes() {
-        try {
-            System.out.print("Digite o caminho do arquivo para salvar as doações: ");
-            String caminhoArquivo = scanner.nextLine();
-            sistema.salvarDoacoes(caminhoArquivo);
+      
+            sistema.salvarDoacoes();
             System.out.println("Doações salvas com sucesso!");
-        } catch (IOException e) {
-            System.out.println("Erro ao salvar doações!");
-            e.printStackTrace();
+    
         }
-    }
 
     private static void carregarDoacoes() {
-        try {
-            System.out.print("Digite o caminho do arquivo para carregar as doações: ");
-            String caminhoArquivo = scanner.nextLine();
-            sistema.carregarDoacoes(caminhoArquivo);
+  
+            sistema.carregarDoacoes();
             System.out.println("Doações carregadas com sucesso!");
-        } catch (IOException e) {
-            System.out.println("Erro ao carregar doações!");
-            e.printStackTrace();
+
         }
-    }
+ 
 }
