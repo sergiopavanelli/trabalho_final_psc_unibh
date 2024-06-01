@@ -83,7 +83,26 @@ public class EntradaDeDoacoes {
     private static void adicionarDoacao() {
         try {
             String tipo = obterTipoDoacao();
-            System.out.print("Digite a quantidade de doação: ");
+            String unidade = "";
+            switch (tipo) {
+                case "dinheiro":
+                    unidade = "R$";
+                    break;
+                case "alimentos":
+                    unidade = "kg";
+                    break;
+                case "roupas":
+                    unidade = "unidades";
+                    break;
+                case "outras":
+                    unidade = "unidades";
+                    break;
+            
+                default:
+                    break;
+            }
+
+            System.out.print("Digite a quantidade de doação em " + unidade + ": ");
             double quantidade = scanner.nextDouble();
             scanner.nextLine();
             Doacao doacao = new Doacao(tipo, quantidade);

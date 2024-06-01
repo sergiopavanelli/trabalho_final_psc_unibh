@@ -1,6 +1,19 @@
-dinheiro,77.0
-alimentos,33.0
-dinheiro,89.0
-alimentos,33.0
-roupas,55.0
-outras,55.0
+dinheiro,77.0,Sat Jun 01 15:08:12 BRT 2024
+alimentos,33.0,Sat Jun 01 15:08:12 BRT 2024
+dinheiro,89.0,Sat Jun 01 15:08:12 BRT 2024
+alimentos,33.0,Sat Jun 01 15:08:12 BRT 2024
+roupas,55.0,Sat Jun 01 15:08:12 BRT 2024
+outras,55.0,Sat Jun 01 15:08:12 BRT 2024
+dinheiro,23.0,Sat Jun 01 15:08:12 BRT 2024
+roupas,55.0,Sat Jun 01 15:08:12 BRT 2024
+dinheiro,10.0,Sat Jun 01 15:08:12 BRT 2024
+alimentos,4.0,Sat Jun 01 15:08:12 BRT 2024
+dinheiro,77.0,Sat Jun 01 15:08:12 BRT 2024
+dinheiro,77.0,Sat Jun 01 15:08:12 BRT 2024
+dinheiro,77.9,Sat Jun 01 15:08:12 BRT 2024
+alimentos,35.5,Sat Jun 01 15:08:12 BRT 2024
+roupas,45.0,Sat Jun 01 15:08:12 BRT 2024
+outras,60.0,Sat Jun 01 15:08:12 BRT 2024
+dinheiro,30.0,Sat Jun 01 15:08:21 BRT 2024
+roupas,50.0,Sat Jun 01 15:08:27 BRT 2024
+outras,50.0,Sat Jun 01 15:08:33 BRT 2024

@@ -37,7 +37,7 @@ public class SistemaDeDoacoes {
     public void salvarDoacoes() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(DATA_FILE))) {
             for (Doacao doacao : doacoes) {
-                writer.write(doacao.getTipo() + "," + doacao.getQuantidade());
+                writer.write(doacao.getTipo() + "," + doacao.getQuantidade() + "," + doacao.getData().toString());
                 writer.newLine();
             }
         } catch (IOException e) {
