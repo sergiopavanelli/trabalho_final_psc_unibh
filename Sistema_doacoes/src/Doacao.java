@@ -1,15 +1,16 @@
-import java.util.Date;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 
 public class Doacao implements Serializable {
     private String tipo;
     private double quantidade;
-    private Date data;
+    private LocalDateTime data;
 
     public Doacao(String tipo, double quantidade) {
         this.tipo = tipo;
         this.quantidade = quantidade;
-        this.data = new Date();
+        this.data = LocalDateTime.now();
     }
 
     public String getTipo() {
@@ -28,16 +29,16 @@ public class Doacao implements Serializable {
         this.quantidade = quantidade;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
     @Override
     public String toString() {
-        return "Doacao [tipo=" + tipo + ", quantidade=" + quantidade + ", data=" + data + "]";
+        return "Tipo: " + tipo + ", Quantidade: " + quantidade + ", Data: " + data.toString();
     }
 }

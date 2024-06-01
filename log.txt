@@ -623,3 +623,33 @@ Dinheiro: 460.9
 Alimentos: 105.5
 Roupas: 205.0
 Outras: 165.0
+Tipo: dinheiro, Quantidade: 77.0, Data: 2024-06-01T15:27:53.342372
+Totais acumulados no momento:
+Dinheiro: 537.9
+Alimentos: 105.5
+Roupas: 205.0
+Outras: 165.0
+Tipo: dinheiro, Quantidade: 77.0, Data: 2024-06-01T15:38:22.165341
+Totais acumulados no momento:
+Dinheiro: 614.9
+Alimentos: 105.5
+Roupas: 205.0
+Outras: 165.0
+Tipo: alimentos, Quantidade: 60.0, Data: 2024-06-01T15:40:01.100636
+Totais acumulados até o momento:
+Dinheiro: 614.9
+Alimentos: 165.5
+Roupas: 205.0
+Outras: 165.0
+Tipo: roupas, Quantidade: 47.0, Data: 2024-06-01T15:40:16.150547
+Totais acumulados até o momento:
+Dinheiro: 614.9
+Alimentos: 165.5
+Roupas: 252.0
+Outras: 165.0
+Tipo: outras, Quantidade: 5.0, Data: 2024-06-01T15:40:22.932791
+Totais acumulados até o momento:
+Dinheiro: 614.9
+Alimentos: 165.5
+Roupas: 252.0
+Outras: 170.0

@@ -120,7 +120,7 @@ public class SistemaDeDoacoes {
         private void logDoacao(Doacao doacao) {
         try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
             logWriter.println(doacao.toString());
-            logWriter.println("Totais acumulados no momento:");
+            logWriter.println("Totais acumulados até o momento:");
             logWriter.println("Dinheiro: " + totalDinheiro);
             logWriter.println("Alimentos: " + totalAlimentos);
             logWriter.println("Roupas: " + totalRoupas);
