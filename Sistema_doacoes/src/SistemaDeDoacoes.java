@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class SistemaDeDoacoes {
     private List<Doacao> doacoes;
@@ -16,6 +14,7 @@ public class SistemaDeDoacoes {
 
     public SistemaDeDoacoes() {
         doacoes = new ArrayList<>();
+        carregarTotaisArmazenados(); // Carrega os totais acumulados do arquivo ao iniciar
     }
 
     public void adicionarDoacao(Doacao doacao) {
@@ -34,22 +33,49 @@ public class SistemaDeDoacoes {
     }
 
     public void salvarDoacoes() {
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
-            outputStream.writeObject(doacoes);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(DATA_FILE))) {
+            for (Doacao doacao : doacoes) {
+                writer.write(doacao.getTipo() + "," + doacao.getQuantidade());
+                writer.newLine();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void carregarDoacoes() {
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
-            doacoes = (List<Doacao>) inputStream.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            // Arquivo de dados não encontrado ou erro de leitura, então apenas inicializa uma nova lista de doações
-            doacoes = new ArrayList<>();
+        doacoes.clear(); // Limpa as doações anteriores antes de carregar novas
+        try (BufferedReader reader = new BufferedReader(new FileReader(DATA_FILE))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                String[] partes = linha.split(",");
+                String tipo = partes[0];
+                double quantidade = Double.parseDouble(partes[1]);
+                doacoes.add(new Doacao(tipo, quantidade));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
+    public void carregarTotaisArmazenados() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(LOG_FILE))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                if (linha.startsWith("Dinheiro: ")) {
+                    totalDinheiro = Double.parseDouble(linha.split(": ")[1]);
+                } else if (linha.startsWith("Alimentos: ")) {
+                    totalAlimentos = Double.parseDouble(linha.split(": ")[1]);
+                } else if (linha.startsWith("Roupas: ")) {
+                    totalRoupas = Double.parseDouble(linha.split(": ")[1]);
+                } else if (linha.startsWith("Outras: ")) {
+                    totalOutras = Double.parseDouble(linha.split(": ")[1]);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void exibirDoacoes() {
         for (Doacao doacao : doacoes) {
@@ -90,10 +116,17 @@ public class SistemaDeDoacoes {
     }
 
     private void logDoacao(Doacao doacao) {
+        // Primeiro, adicionamos a nova doação à lista de doações
+        doacoes.add(doacao);
+    
+        // Em seguida, recalculamos os totais acumulados por tipo
         calcularTotaisPorTipo();
+    
         try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
+            // Escrevemos a nova doação no arquivo de log
             logWriter.println(doacao.toString());
             logWriter.println("Totais acumulados no momento:");
+            // Escrevemos os totais acumulados atualizados no arquivo de log
             logWriter.println("Dinheiro: " + totalDinheiro);
             logWriter.println("Alimentos: " + totalAlimentos);
             logWriter.println("Roupas: " + totalRoupas);
@@ -103,4 +136,6 @@ public class SistemaDeDoacoes {
             System.err.println("Erro ao gravar no arquivo de log: " + e.getMessage());
         }
     }
+
 }
+    
