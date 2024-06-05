@@ -43,22 +43,45 @@ A IA desempenhou um papel fundamental na decomposição do problema em requisito
   - `setTipo(String tipo)` - Define o tipo de doação.
   - `setQuantidade(double quantidade)` - Define a quantidade da doação.
   - `setData(LocalDateTime data)` - Define a data da doação.
+  - `toString(): String` - Retorna uma representação em string da doação.
 
 ### Classe: `SistemaDeDoacoes`
 - **Propriedades:**
   - `doacoes: List<Doacao>` - Lista de doações registradas.
+  - `totalDinheiro: double` - Total de doações em dinheiro.
+  - `totalAlimentos: double` - Total de doações em alimentos.
+  - `totalRoupas: double` - Total de doações em roupas.
+  - `totalOutras: double` - Total de doações em outras categorias.
 
 - **Métodos:**
   - `adicionarDoacao(Doacao doacao)` - Adiciona uma nova doação à lista.
   - `calcularTotalDoacoes(): double` - Calcula o total das doações.
   - `salvarDoacoes()` - Salva as doações em um arquivo texto.
   - `carregarDoacoes()` - Carrega as doações de um arquivo texto.
+  - `carregarTotaisArmazenados()` - Carrega os totais acumulados do arquivo de log.
   - `exibirDoacoes()` - Exibe as doações registradas.
   - `calcularTotaisPorTipo()` - Calcula os totais de doações por tipo.
   - `exibirTotaisPorTipo()` - Exibe os totais de doações por tipo.
+  - `logDoacao(Doacao doacao)` - Registra a doação no log.
+
+### Classe: `EntradaDeDoacoes`
+- **Métodos:**
+  - `main(String[] args)` - Método principal que inicializa o sistema e apresenta o menu de opções.
+  - `obterTipoDoacao(): String` - Obtém o tipo de doação a partir da entrada do usuário.
+  - `adicionarDoacao()` - Adiciona uma nova doação com base na entrada do usuário.
+  - `calcularTotalDoacoes()` - Calcula e exibe o total de doações.
+  - `salvarDoacoes()` - Salva as doações em um arquivo.
+  - `carregarDoacoes()` - Carrega as doações de um arquivo.
+
+### Classe: `ExceptionHandler`
+- **Métodos:**
+  - `handle(Exception e, String message)` - Lida com exceções gerais e imprime uma mensagem.
+  - `handleNumberFormatException(NumberFormatException e)` - Lida com exceções de formatação numérica.
+  - `handleIOException(IOException e)` - Lida com exceções de I/O.
+  - `handleGenericException(Exception e)` - Lida com exceções genéricas.
 
 ### Relação entre as Classes:
-A classe `SistemaDeDoacoes` contém uma lista de objetos da classe `Doacao`. Cada doação registrada é um objeto `Doacao` armazenado dentro do `SistemaDeDoacoes`. O método `adicionarDoacao` permite adicionar novas doações à lista, enquanto `calcularTotalDoacoes` percorre essa lista para somar os valores. Os métodos `salvarDoacoes` e `carregarDoacoes` gerenciam a persistência das doações em arquivos texto, permitindo que os dados sejam armazenados e recuperados conforme necessário.
+A classe `SistemaDeDoacoes` contém uma lista de objetos da classe `Doacao`. Cada doação registrada é um objeto `Doacao` armazenado dentro do `SistemaDeDoacoes`. O método `adicionarDoacao` permite adicionar novas doações à lista, enquanto `calcularTotalDoacoes` percorre essa lista para somar os valores. Os métodos `salvarDoacoes` e `carregarDoacoes` gerenciam a persistência das doações em arquivos texto, permitindo que os dados sejam armazenados e recuperados conforme necessário. A classe `EntradaDeDoacoes` atua como ponto de entrada do sistema, permitindo a interação do usuário com as funcionalidades de gerenciamento de doações.
 
 ## 5. Estratégia de Programação com IA:
 - A classe `EntradaDeDoacoes` atua como ponto de entrada do sistema, permitindo a interação do usuário com as funcionalidades de gerenciamento de doações. O programa oferece um menu intuitivo que guia o usuário nas opções disponíveis, proporcionando uma experiência amigável e de fácil utilização.
