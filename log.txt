@@ -767,3 +767,9 @@ Dinheiro: 1480,93
 Alimentos: 347,08
 Roupas: 302,00
 Outras: 220,00
+-- Tipo: dinheiro, Quantidade: 77,00, Data: 2024-06-05T12:56:27.723652 --
+Totais acumulados até o momento:
+Dinheiro: 1557,93
+Alimentos: 347,08
+Roupas: 302,00
+Outras: 220,00
