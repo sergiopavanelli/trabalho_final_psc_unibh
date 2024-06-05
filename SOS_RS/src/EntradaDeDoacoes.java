@@ -119,7 +119,6 @@ public class EntradaDeDoacoes {
     }
 
     private static void salvarDoacoes() {
-
         try {      
             sistema.salvarDoacoes();
             System.out.println("Doações salvas com sucesso!");
