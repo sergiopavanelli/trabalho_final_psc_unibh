@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
 
 public class SistemaDeDoacoes {
     private List<Doacao> doacoes;
@@ -41,7 +44,7 @@ public class SistemaDeDoacoes {
                 writer.newLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            ExceptionHandler.handleIOException(e);
         }
     }
 
@@ -52,11 +55,11 @@ public class SistemaDeDoacoes {
             while ((linha = reader.readLine()) != null) {
                 String[] partes = linha.split(",");
                 String tipo = partes[0];
-                double quantidade = Double.parseDouble(partes[1]);
+                double quantidade = Double.parseDouble(partes[1].replace(",", "."));
                 doacoes.add(new Doacao(tipo, quantidade));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            ExceptionHandler.handleIOException(e);
         }
     }
 
@@ -65,17 +68,17 @@ public class SistemaDeDoacoes {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 if (linha.startsWith("Dinheiro: ")) {
-                    totalDinheiro = Double.parseDouble(linha.split(": ")[1]);
+                    totalDinheiro = Double.parseDouble(linha.split(": ")[1].replace(",", "."));
                 } else if (linha.startsWith("Alimentos: ")) {
-                    totalAlimentos = Double.parseDouble(linha.split(": ")[1]);
+                    totalAlimentos = Double.parseDouble(linha.split(": ")[1].replace(",", "."));
                 } else if (linha.startsWith("Roupas: ")) {
-                    totalRoupas = Double.parseDouble(linha.split(": ")[1]);
+                    totalRoupas = Double.parseDouble(linha.split(": ")[1].replace(",", "."));
                 } else if (linha.startsWith("Outras: ")) {
-                    totalOutras = Double.parseDouble(linha.split(": ")[1]);
+                    totalOutras = Double.parseDouble(linha.split(": ")[1].replace(",", "."));
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            ExceptionHandler.handleIOException(e);
         }
     }
 
@@ -121,16 +124,15 @@ public class SistemaDeDoacoes {
         try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
             logWriter.println(doacao.toString());
             logWriter.println("Totais acumulados até o momento:");
-            logWriter.println("Dinheiro: " + totalDinheiro);
-            logWriter.println("Alimentos: " + totalAlimentos);
+            logWriter.println("Dinheiro: " + String.format("%.2f", totalDinheiro));
+            logWriter.println("Alimentos: " + String.format("%2f", totalAlimentos));
             logWriter.println("Roupas: " + totalRoupas);
-            logWriter.println("Outras: " + totalOutras);
+            logWriter.println("Outras: " + String.format("%2f", totalOutras));
             logWriter.flush();
         } catch (IOException e) {
-            System.err.println("Erro ao gravar no arquivo de log: " + e.getMessage());
+            ExceptionHandler.handleIOException(e);
         }
-    }
-    
+    }    
 
 }
     

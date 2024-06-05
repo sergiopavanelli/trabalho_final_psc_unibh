@@ -106,9 +106,10 @@ public class EntradaDeDoacoes {
             Doacao doacao = new Doacao(tipo, quantidade);
             sistema.adicionarDoacao(doacao);
             System.out.println("Doação adicionada com sucesso!");
+        } catch (NumberFormatException e) {
+           ExceptionHandler.handleNumberFormatException(e);
         } catch (Exception e) {
-            System.out.println("Erro ao adicionar doação!");
-            e.printStackTrace();
+            ExceptionHandler.handleGenericException(e);
         }
     }
 
@@ -118,17 +119,22 @@ public class EntradaDeDoacoes {
     }
 
     private static void salvarDoacoes() {
-      
+
+        try {      
             sistema.salvarDoacoes();
             System.out.println("Doações salvas com sucesso!");
-    
+        } catch (Exception e) {
+            ExceptionHandler.handleGenericException(e);  
         }
+
+    }
 
     private static void carregarDoacoes() {
-  
+        try {
             sistema.carregarDoacoes();
             System.out.println("Doações carregadas com sucesso!");
-
+        } catch (Exception e) {
+            ExceptionHandler.handleGenericException(e);
         }
- 
+    }
 }
