@@ -713,3 +713,57 @@ Dinheiro: 998,27
 Alimentos: 286,000000
 Roupas: 302.0
 Outras: 220,000000
+Tipo: dinheiro, Quantidade: 100.56, Data: 2024-06-05T11:11:50.702452
+- Totais acumulados até o momento:
+Dinheiro: 1098,83
+Alimentos: 286,000000
+Roupas: 302.0
+Outras: 220,000000
+- Tipo: dinheiro, Quantidade: 77.77, Data: 2024-06-05T11:14:27.461699
+Totais acumulados até o momento:
+Dinheiro: 1176,60
+Alimentos: 286,000000
+Roupas: 302.0
+Outras: 220,000000
+--Tipo: dinheiro, Quantidade: 89.9, Data: 2024-06-05T11:15:38.587688 --
+Totais acumulados até o momento:
+Dinheiro: 1266,50
+Alimentos: 286,000000
+Roupas: 302.0
+Outras: 220,000000
+-- Tipo: alimentos, Quantidade: 30.5, Data: 2024-06-05T11:16:01.514599 --
+Totais acumulados até o momento:
+Dinheiro: 1266,50
+Alimentos: 316,500000
+Roupas: 302.0
+Outras: 220,000000
+-- Tipo: dinheiro, Quantidade: 45.77, Data: 2024-06-05T11:18:36.695242 --
+Totais acumulados até o momento:
+Dinheiro: 1312,27
+Alimentos: 316,500000
+Roupas: 302.0
+Outras: 220,000000
+-- Tipo: alimentos, Quantidade: 30.58, Data: 2024-06-05T11:18:44.240101 --
+Totais acumulados até o momento:
+Dinheiro: 1312,27
+Alimentos: 347,080000
+Roupas: 302.0
+Outras: 220,000000
+-- Tipo: dinheiro, Quantidade: 45.54, Data: 2024-06-05T11:23:10.417357 --
+Totais acumulados até o momento:
+Dinheiro: 1357,81
+Alimentos: 347,080000
+Roupas: 302,000000
+Outras: 220,000000
+-- Tipo: dinheiro, Quantidade: 77.56, Data: 2024-06-05T11:27:36.265072 --
+Totais acumulados até o momento:
+Dinheiro: 1435,37
+Alimentos: 347,08
+Roupas: 302,00
+Outras: 220,00
+-- Tipo: dinheiro, Quantidade: 45,56, Data: 2024-06-05T11:29:11.753523 --
+Totais acumulados até o momento:
+Dinheiro: 1480,93
+Alimentos: 347,08
+Roupas: 302,00
+Outras: 220,00

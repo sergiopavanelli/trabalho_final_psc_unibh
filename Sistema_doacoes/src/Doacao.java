@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.text.DecimalFormat;
 
 
 public class Doacao implements Serializable {
@@ -39,6 +40,7 @@ public class Doacao implements Serializable {
 
     @Override
     public String toString() {
-        return "Tipo: " + tipo + ", Quantidade: " + quantidade + ", Data: " + data.toString();
+        DecimalFormat df = new DecimalFormat("0.00");
+        return "-- Tipo: " + tipo + ", Quantidade: " + df.format(quantidade) + ", Data: " + data.toString() + " --";
     }
 }

@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
+
 
 
 public class SistemaDeDoacoes {
@@ -113,21 +113,23 @@ public class SistemaDeDoacoes {
     }
 
     public void exibirTotaisPorTipo() {
-        System.out.println("Totais acumulados por tipo de doação:");
-        System.out.println("Dinheiro: " + totalDinheiro);
-        System.out.println("Alimentos: " + totalAlimentos);
-        System.out.println("Roupas: " + totalRoupas);
-        System.out.println("Outras: " + totalOutras);
+        DecimalFormat df = new DecimalFormat("0.00");
+        System.out.println("- Totais acumulados por tipo de doação:");
+        System.out.println("Dinheiro: " + df.format(totalDinheiro));
+        System.out.println("Alimentos: " + df.format(totalAlimentos));
+        System.out.println("Roupas: " + df.format(totalRoupas));
+        System.out.println("Outras: " + df.format(totalOutras));
     }
 
         private void logDoacao(Doacao doacao) {
+        DecimalFormat df = new DecimalFormat("0.00");
         try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
             logWriter.println(doacao.toString());
             logWriter.println("Totais acumulados até o momento:");
-            logWriter.println("Dinheiro: " + String.format("%.2f", totalDinheiro));
-            logWriter.println("Alimentos: " + String.format("%2f", totalAlimentos));
-            logWriter.println("Roupas: " + totalRoupas);
-            logWriter.println("Outras: " + String.format("%2f", totalOutras));
+            logWriter.println("Dinheiro: " + df.format(totalDinheiro));
+            logWriter.println("Alimentos: " + df.format(totalAlimentos));
+            logWriter.println("Roupas: " + df.format(totalRoupas));
+            logWriter.println("Outras: " + df.format(totalOutras));
             logWriter.flush();
         } catch (IOException e) {
             ExceptionHandler.handleIOException(e);
