@@ -46,14 +46,20 @@ Utilizando a bibliografia abaixo, foi possível analisar de forma crítica o uso
 - `tipo: String` - Tipo de doação (dinheiro, alimentos, roupas, etc.).
 - `quantidade: double` - Quantidade doada.
 - `data: LocalDateTime` - Data da doação.
+- `nome: String` - Nome do doador.
+- `email: String` - Email do doador.
 
 **Métodos:**
 - `getTipo(): String` - Retorna o tipo de doação.
 - `getQuantidade(): double` - Retorna a quantidade da doação.
 - `getData(): LocalDateTime` - Retorna a data da doação.
+- `getNome(): String` - Retorna o nome do doador.
+- `getEmail(): String` - Retorna o email do doador.
 - `setTipo(String tipo)` - Define o tipo de doação.
 - `setQuantidade(double quantidade)` - Define a quantidade da doação.
 - `setData(LocalDateTime data)` - Define a data da doação.
+- `setNome(String nome)` - Define o nome do doador.
+- `setEmail(String email)` - Define o email do doador.
 - `toString(): String` - Retorna uma representação em string da doação.
 
 ### Classe: `SistemaDeDoacoes`
@@ -63,9 +69,13 @@ Utilizando a bibliografia abaixo, foi possível analisar de forma crítica o uso
 - `totalAlimentos: double` - Total de doações em alimentos.
 - `totalRoupas: double` - Total de doações em roupas.
 - `totalOutras: double` - Total de doações em outras categorias.
+- `countDinheiro: int` - Contador de doações em dinheiro.
+- `countAlimentos: int` - Contador de doações em alimentos.
+- `countRoupas: int` - Contador de doações em roupas.
+- `countOutras: int` - Contador de doações em outras categorias.
 
 **Métodos:**
-- `adicionarDoacao(Doacao doacao)` - Adiciona uma nova doação à lista.
+- `adicionarDoacao(Doacao doacao, String nomeDoador, String emailDoador)` - Adiciona uma nova doação à lista.
 - `calcularTotalDoacoes(): double` - Calcula o total das doações.
 - `salvarDoacoes()` - Salva as doações em um arquivo texto.
 - `carregarDoacoes()` - Carrega as doações de um arquivo texto.
