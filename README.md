@@ -1,11 +1,10 @@
 # Trabalho Final - Programação de Soluções Computacionais
 
-# Sistema de Gerenciamento de Doações
+## Sistema de Gerenciamento de Doações
 
 ## Alunos:
 
 - Sérgio Pinton Pavanelli – RA 123220202
-
 - Klaus Boger Tolentino Juliani - RA 122211902
 
 ## 1. Proposta de Problema
