@@ -28,7 +28,16 @@ Este projeto aplica os conhecimentos adquiridos na disciplina de Programação d
 7. **Interface amigável para visualização e interação com os dados.**
 
 ## 3. Crítica à IA
+
 A IA foi fundamental na decomposição do problema em requisitos funcionais. Embora útil na geração de ideias, é necessário analisar criticamente as sugestões para garantir a consistência e a precisão dos requisitos.
+
+Utilizando a bibliografia abaixo, foi possível analisar de forma crítica o uso da IA na resolução deste problema, chegando à conclusão de que a intervenção humana foi crucial para ajustar e refinar o sistema, garantindo que todos os aspectos do projeto fossem abordados de maneira completa e eficaz. 
+
+# Bibliografia: #
+
+- Pressman, R. S. (2014). Software Engineering: A Practitioner's Approach. McGraw-Hill.
+
+
 
 ## 4. Diagrama de Classes
 

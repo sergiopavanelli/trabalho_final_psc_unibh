@@ -7,6 +7,8 @@ public class Doacao implements Serializable {
     private String tipo;
     private double quantidade;
     private LocalDateTime data;
+    private String nome;
+    private String email;
 
     public Doacao(String tipo, double quantidade) {
         this.tipo = tipo;
