@@ -15,6 +15,11 @@ public class SistemaDeDoacoes {
     private double totalRoupas = 0;
     private double totalOutras = 0;
 
+    private int countDinheiro = 0;
+    private int countAlimentos = 0;
+    private int countRoupas = 0;
+    private int countOutras = 0;
+
     public SistemaDeDoacoes() {
         doacoes = new ArrayList<>();
         carregarDoacoes();
@@ -30,11 +35,9 @@ public class SistemaDeDoacoes {
     
 
     public double calcularTotalDoacoes() {
-        double total = 0;
-        for (Doacao doacao : doacoes) {
-            total += doacao.getQuantidade();
-        }
-        return total;
+        calcularTotaisPorTipo(); //atualiza os totais por tipo
+        int totalDoacoes = countDinheiro + countAlimentos + countRoupas + countOutras;    
+        return totalDoacoes;
     }
 
     public void salvarDoacoes() {
@@ -68,17 +71,35 @@ public class SistemaDeDoacoes {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 if (linha.startsWith("Dinheiro: ")) {
-                    totalDinheiro = Double.parseDouble(linha.split(": ")[1].replace(",", "."));
+                    String[] parts = linha.split(": ")[1].split(" ");
+                    if (parts.length >= 3) {
+                        totalDinheiro = Double.parseDouble(parts[0].replace(",", "."));
+                        countDinheiro = Integer.parseInt(parts[2].replace("(", "").replace("doações)", ""));
+                    }
                 } else if (linha.startsWith("Alimentos: ")) {
-                    totalAlimentos = Double.parseDouble(linha.split(": ")[1].replace(",", "."));
+                    String[] parts = linha.split(": ")[1].split(" ");
+                    if (parts.length >= 3) {
+                        totalAlimentos = Double.parseDouble(parts[0].replace(",", "."));
+                        countAlimentos = Integer.parseInt(parts[2].replace("(", "").replace("doações)", ""));
+                    }
                 } else if (linha.startsWith("Roupas: ")) {
-                    totalRoupas = Double.parseDouble(linha.split(": ")[1].replace(",", "."));
+                    String[] parts = linha.split(": ")[1].split(" ");
+                    if (parts.length >= 3) {
+                        totalRoupas = Double.parseDouble(parts[0].replace(",", "."));
+                        countRoupas = Integer.parseInt(parts[2].replace("(", "").replace("doações)", ""));
+                    }
                 } else if (linha.startsWith("Outras: ")) {
-                    totalOutras = Double.parseDouble(linha.split(": ")[1].replace(",", "."));
+                    String[] parts = linha.split(": ")[1].split(" ");
+                    if (parts.length >= 3) {
+                        totalOutras = Double.parseDouble(parts[0].replace(",", "."));
+                        countOutras = Integer.parseInt(parts[2].replace("(", "").replace("doações)", ""));
+                    }
                 }
             }
         } catch (IOException e) {
             ExceptionHandler.handleIOException(e);
+        } catch (NumberFormatException e) {
+            ExceptionHandler.handleNumberFormatException(e);
         }
     }
 
@@ -94,19 +115,28 @@ public class SistemaDeDoacoes {
         totalRoupas = 0;
         totalOutras = 0;
 
+        countDinheiro = 0;
+        countAlimentos = 0;
+        countRoupas = 0;
+        countOutras = 0;
+
         for (Doacao doacao : doacoes) {
             switch (doacao.getTipo()) {
                 case "dinheiro":
                     totalDinheiro += doacao.getQuantidade();
+                    countDinheiro++;
                     break;
                 case "alimentos":
                     totalAlimentos += doacao.getQuantidade();
+                    countAlimentos++;
                     break;
                 case "roupas":
                     totalRoupas += doacao.getQuantidade();
+                    countRoupas++;
                     break;
                 case "outras":
                     totalOutras += doacao.getQuantidade();
+                    countOutras++;
                     break;
             }
         }
@@ -115,21 +145,24 @@ public class SistemaDeDoacoes {
     public void exibirTotaisPorTipo() {
         DecimalFormat df = new DecimalFormat("0.00");
         System.out.println("- Totais acumulados por tipo de doação:");
-        System.out.println("Dinheiro: " + df.format(totalDinheiro));
-        System.out.println("Alimentos: " + df.format(totalAlimentos));
-        System.out.println("Roupas: " + df.format(totalRoupas));
-        System.out.println("Outras: " + df.format(totalOutras));
+        System.out.println("Dinheiro: " + df.format(totalDinheiro) + " (" + countDinheiro + " doações)");
+        System.out.println("Alimentos: " + df.format(totalAlimentos) + " (" + countAlimentos + " doações)");
+        System.out.println("Roupas: " + df.format(totalRoupas) + " (" + countRoupas + " doações)");
+        System.out.println("Outras: " + df.format(totalOutras) + " (" + countOutras + " doações)");
     }
+  
+    
 
         private void logDoacao(Doacao doacao) {
         DecimalFormat df = new DecimalFormat("0.00");
         try (PrintWriter logWriter = new PrintWriter(new FileWriter(LOG_FILE, true))) {
             logWriter.println(doacao.toString());
-            logWriter.println("Totais acumulados até o momento:");
-            logWriter.println("Dinheiro: " + df.format(totalDinheiro));
-            logWriter.println("Alimentos: " + df.format(totalAlimentos));
-            logWriter.println("Roupas: " + df.format(totalRoupas));
-            logWriter.println("Outras: " + df.format(totalOutras));
+            logWriter.println("-- Total de doações até o momento: " + calcularTotalDoacoes() + " --");
+            logWriter.println("Dinheiro: " + df.format(totalDinheiro) + " (" + countDinheiro + " doações)");
+            logWriter.println("Alimentos: " + df.format(totalAlimentos) + " (" + countAlimentos + " doações)");
+            logWriter.println("Roupas: " + df.format(totalRoupas) + " (" + countRoupas + " doações)");
+            logWriter.println("Outras: " + df.format(totalOutras) + " (" + countOutras + " doações)");
+            logWriter.println("------------------------------------------------------------------------------");
             logWriter.flush();
         } catch (IOException e) {
             ExceptionHandler.handleIOException(e);
