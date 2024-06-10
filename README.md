@@ -33,7 +33,7 @@ A IA foi fundamental na decomposição do problema em requisitos funcionais. Emb
 
 Utilizando a bibliografia abaixo, foi possível analisar de forma crítica o uso da IA na resolução deste problema, chegando à conclusão de que a intervenção humana foi crucial para ajustar e refinar o sistema, garantindo que todos os aspectos do projeto fossem abordados de maneira completa e eficaz. 
 
-# Bibliografia: #
+## Bibliografia: ##
 
 - Pressman, R. S. (2014). Software Engineering: A Practitioner's Approach. McGraw-Hill.
 
