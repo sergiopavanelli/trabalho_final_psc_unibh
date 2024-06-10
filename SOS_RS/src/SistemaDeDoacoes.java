@@ -26,12 +26,15 @@ public class SistemaDeDoacoes {
         carregarTotaisArmazenados(); // Carrega os totais acumulados do arquivo ao iniciar
     }
 
-    public void adicionarDoacao(Doacao doacao) {
+    public void adicionarDoacao(Doacao doacao, String nomeDoador, String emailDoador) {
+        doacao.setNome(nomeDoador);
+        doacao.setEmail(emailDoador);
         doacoes.add(doacao);
         salvarDoacoes();
         calcularTotaisPorTipo();
         logDoacao(doacao);
     }
+    
     
 
     public double calcularTotalDoacoes() {
@@ -43,7 +46,7 @@ public class SistemaDeDoacoes {
     public void salvarDoacoes() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(DATA_FILE))) {
             for (Doacao doacao : doacoes) {
-                writer.write(doacao.getTipo() + "," + doacao.getQuantidade() + "," + doacao.getData().toString());
+                writer.write(doacao.getTipo() + "," + doacao.getQuantidade() + "," + doacao.getData().toString() + "," + doacao.getNome() + "," + doacao.getEmail());
                 writer.newLine();
             }
         } catch (IOException e) {
@@ -59,12 +62,15 @@ public class SistemaDeDoacoes {
                 String[] partes = linha.split(",");
                 String tipo = partes[0];
                 double quantidade = Double.parseDouble(partes[1].replace(",", "."));
-                doacoes.add(new Doacao(tipo, quantidade));
+                String nome = partes[3]; // Obtém o nome do doador
+                String email = partes[4]; // Obtém o email do doador
+                doacoes.add(new Doacao(tipo, quantidade, nome, email)); // Passa nome e email ao criar a doação
             }
         } catch (IOException e) {
             ExceptionHandler.handleIOException(e);
         }
     }
+    
 
     public void carregarTotaisArmazenados() {
         try (BufferedReader reader = new BufferedReader(new FileReader(LOG_FILE))) {

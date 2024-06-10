@@ -81,6 +81,11 @@ public class EntradaDeDoacoes {
     private static void adicionarDoacao() {
         try {
             String tipo = obterTipoDoacao();
+            System.out.print("Digite o nome do doador: ");
+            String nome = scanner.nextLine();
+            System.out.print("Digite o email do doador: ");
+            String email = scanner.nextLine();
+    
             String unidade = "";
             switch (tipo) {
                 case "dinheiro":
@@ -90,21 +95,18 @@ public class EntradaDeDoacoes {
                     unidade = "kg";
                     break;
                 case "roupas":
-                    unidade = "unidades";
-                    break;
                 case "outras":
                     unidade = "unidades";
                     break;
-            
                 default:
                     break;
             }
-
+    
             System.out.print("Digite a quantidade de doação em " + unidade + ": ");
             double quantidade = scanner.nextDouble();
             scanner.nextLine();
-            Doacao doacao = new Doacao(tipo, quantidade);
-            sistema.adicionarDoacao(doacao);
+            Doacao doacao = new Doacao(tipo, quantidade, nome, email);
+            sistema.adicionarDoacao(doacao, nome, email); // Passa nome e email para adicionarDoacao()
             System.out.println("Doação adicionada com sucesso!");
         } catch (NumberFormatException e) {
            ExceptionHandler.handleNumberFormatException(e);
@@ -112,6 +114,7 @@ public class EntradaDeDoacoes {
             ExceptionHandler.handleGenericException(e);
         }
     }
+    
 
     private static void calcularTotalDoacoes() {
         double total = sistema.calcularTotalDoacoes();

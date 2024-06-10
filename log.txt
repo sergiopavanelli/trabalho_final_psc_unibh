@@ -933,3 +933,73 @@ Alimentos: 498,58 (16 doações)
 Roupas: 874,00 (8 doações)
 Outras: 260,00 (8 doações)
 ------------------------------------------------------------------------------
+-- Tipo: dinheiro, Quantidade: 77,77, Data: 2024-06-10T17:33:03.920745 --null null
+-- Total de doações até o momento: 70.0 --
+Dinheiro: 2706,96 (38 doações)
+Alimentos: 498,58 (16 doações)
+Roupas: 874,00 (8 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: alimentos, Quantidade: 1556893,00, Data: 2024-06-10T17:33:37.654766 --null null
+-- Total de doações até o momento: 71.0 --
+Dinheiro: 2706,96 (38 doações)
+Alimentos: 1557391,58 (17 doações)
+Roupas: 874,00 (8 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: dinheiro, Quantidade: 55,00, Data: 2024-06-10T17:42:08.250433 --jimi jimi@jimi
+-- Total de doações até o momento: 72.0 --
+Dinheiro: 2761,96 (39 doações)
+Alimentos: 1557391,58 (17 doações)
+Roupas: 874,00 (8 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: alimentos, Quantidade: 30,00, Data: 2024-06-10T17:48:51.528379 --gilbert hjk@35
+-- Total de doações até o momento: 73.0 --
+Dinheiro: 2761,96 (39 doações)
+Alimentos: 1557421,58 (18 doações)
+Roupas: 874,00 (8 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: dinheiro, Quantidade: 356,78, Data: 2024-06-10T17:50:49.695659 --Doador fridae-mail: 78hgky@78.com
+-- Total de doações até o momento: 74.0 --
+Dinheiro: 3118,74 (40 doações)
+Alimentos: 1557421,58 (18 doações)
+Roupas: 874,00 (8 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: dinheiro, Quantidade: 55,00, Data: 2024-06-10T17:52:38.314059 --Doador: gobhytye-mail: ghjyuyeit@jhdjhgd
+-- Total de doações até o momento: 75.0 --
+Dinheiro: 3173,74 (41 doações)
+Alimentos: 1557421,58 (18 doações)
+Roupas: 874,00 (8 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: roupas, Quantidade: 55,00, Data: 2024-06-10T17:55:03.324059, Doador: 567, e-mail: stio --
+-- Total de doações até o momento: 76.0 --
+Dinheiro: 3173,74 (41 doações)
+Alimentos: 1557421,58 (18 doações)
+Roupas: 929,00 (9 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: dinheiro, Quantidade: 1785,25, Data: 2024-06-10T18:01:17.590191, Doador: tarantino, e-mail: tarantino@yahoo.com.br --
+-- Total de doações até o momento: 77.0 --
+Dinheiro: 4958,99 (42 doações)
+Alimentos: 1557421,58 (18 doações)
+Roupas: 929,00 (9 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: roupas, Quantidade: 35,00, Data: 2024-06-10T18:02:07.850203, Doador: jim, e-mail: jim@564 --
+-- Total de doações até o momento: 78.0 --
+Dinheiro: 4958,99 (42 doações)
+Alimentos: 1557421,58 (18 doações)
+Roupas: 964,00 (10 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
+-- Tipo: roupas, Quantidade: 1465,00, Data: 2024-06-10T18:02:47.738623, Doador: 1918war, e-mail: war@789 --
+-- Total de doações até o momento: 79.0 --
+Dinheiro: 4958,99 (42 doações)
+Alimentos: 1557421,58 (18 doações)
+Roupas: 2429,00 (11 doações)
+Outras: 260,00 (8 doações)
+------------------------------------------------------------------------------
