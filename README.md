@@ -5,7 +5,7 @@
 ## Alunos:
 
 - Sérgio Pinton Pavanelli – RA 123220202
-- Klaus Boger Tolentino Juliani - RA 122211902
+- Klaus Boger Tolentino Juliani - RA 1232020299
 
 ## 1. Proposta de Problema
 
