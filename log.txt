@@ -877,3 +877,24 @@ Alimentos: 467,58 (14 doações)
 Roupas: 307,00 (7 doações)
 Outras: 250,00 (6 doações)
 ------------------------------------------------------------------------------
+-- Tipo: dinheiro, Quantidade: 77,56, Data: 2024-06-10T15:24:19.617725 --
+-- Total de doações até o momento: 62.0 --
+Dinheiro: 2529,65 (35 doações)
+Alimentos: 467,58 (14 doações)
+Roupas: 307,00 (7 doações)
+Outras: 250,00 (6 doações)
+------------------------------------------------------------------------------
+-- Tipo: roupas, Quantidade: 567,00, Data: 2024-06-10T15:33:51.186320 --
+-- Total de doações até o momento: 63.0 --
+Dinheiro: 2529,65 (35 doações)
+Alimentos: 467,58 (14 doações)
+Roupas: 874,00 (8 doações)
+Outras: 250,00 (6 doações)
+------------------------------------------------------------------------------
+-- Tipo: outras, Quantidade: 5,00, Data: 2024-06-10T15:33:55.908732 --
+-- Total de doações até o momento: 64.0 --
+Dinheiro: 2529,65 (35 doações)
+Alimentos: 467,58 (14 doações)
+Roupas: 874,00 (8 doações)
+Outras: 255,00 (7 doações)
+------------------------------------------------------------------------------
