@@ -4,7 +4,6 @@ import java.util.List;
 import java.text.DecimalFormat;
 
 
-
 public class SistemaDeDoacoes {
     private List<Doacao> doacoes;
     private static final String DATA_FILE = "doacoes.txt";
